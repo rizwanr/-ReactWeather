@@ -1,32 +1,36 @@
-//react component
+// A props(component properites) is a way to pass in a data to component when you first start it
+// {} put the varibale in the javascript expression
+//getDefaultProps is a new method, does not take any arguement and returns an object of properties that is "this.props"
+//if you delete the name attribute then it will just render to the default "Hello React" but if u pass the
+// name attrubute, it will render to Hello Rizwan
 
 var Greeter = React.createClass({
-render: function(){         // render method setting the render property to an anonymous function
-                            // all it needs is some jsx function that needs to be rendered
+getDefaultProps:function(){
+ return {
+  name: 'React',
+  message : 'Default message'
+ };
+},
+
+render: function(){
+var name = this.props.name; // fetch the name inside the react function in the variable
+var message = this.props.message;
 return(
 <div>
   <h1>
-     Hello react!
+     Hello {name}
   </h1>
-  <p>This is from the component</p>
+  <p>{message} !!</p>
   </div>
-
-); // the only reason we use parenthesis here so that we can properly format
+);
 }
-});  // this is the most common method is react method, takes only one arguement
-                                    //an options object, this is where we descibe the behaviour of hte component
-//Once we have the greeter component defined, and is going to render an H1 tag, in order for it to use it,
-//we need to pass it as the first  arguement to the react render method
+});
 
+var firstName = 'Rizwan';
+var message = 'This is the message wihout the default';
 
-// All we do is pass in the little piece of code to render, in this case a h1 tag and the location to render it
-ReactDOM.render(        //this is the most common react dom method
-                      //call it as a function, passing two arguements, first is jpiece of jsx and the second
-                       //is the app element, JSX = javascript XML
-  <Greeter/>,
+ReactDOM.render(
+  <Greeter  name= {firstName} message ={message}/>,  // pass the  attribute; it should be available to our Greeter component.
+                              // all we need to do is pull it out inside of render and replace with the React word in Hello React
     document.getElementById('app')
 );
-
-//using react component makes it more reusable.
-//you can only return one root element from the component; you can only render from one root element, have
-//more element inside the root element
