@@ -3,26 +3,12 @@
 <head>
   <meta charset="utf-8"/>
 
-  <!--
-First library we are going to include is the babel library.Bable will enable us to use all the new
-es6 features even if the browser does not support it.
-The other thing that this library does it convers JSX into javascript
--->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-  <!-- rect and react dom is required if you are using react is web.
-  the reason react and react dom is different and not the same library becoz react is
-  being used in other platforms like native ios and android
-  react dom is only necesary when we are using in web
--->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-
 </head>
 <body>   <!--everything is the body gets rendered in the browser-->
 <div id = "app"> <!-- this is going to be the container for our react app. All react apps
   requires some element to the exist in your website that it can attacth to -->
 </div>
-<script type="text/babel" src = "app.jsx"></script>
+<script src = "bundle.js"></script>
 <!-- this is how babel will know it has to do something with the code insdide so it you use
 es6 features and jsx, bable will convert it to javascipt automatically-->
 
