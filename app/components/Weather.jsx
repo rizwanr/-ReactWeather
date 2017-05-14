@@ -30,7 +30,7 @@ var Weather = React.createClass({
     var {isLoading, temp,location} = this.state;
     function renderMessage(){
      if(isLoading){
-       ret urn <h3>Fetching weather....!</h3>
+       return <h3>Fetching weather....!</h3>
      }  else if(temp && location){
         return <WeatherMessage temp={temp} location={location}/>
 
