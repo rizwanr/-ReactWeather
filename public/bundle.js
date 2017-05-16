@@ -24922,11 +24922,6 @@
 	      'div',
 	      null,
 	      React.createElement(Nav, null),
-	      React.createElement(
-	        'h2',
-	        null,
-	        'Main Component'
-	      ),
 	      this.props.children
 	    );
 	  }
@@ -25068,7 +25063,7 @@
 	      if (isLoading) {
 	        return React.createElement(
 	          'h3',
-	          null,
+	          { className: 'text-center' },
 	          'Fetching weather....!'
 	        );
 	      } else if (temp && location) {
@@ -25079,9 +25074,9 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h3',
-	        null,
-	        'Weather Component'
+	        'h1',
+	        { 'class': 'text-center' },
+	        'Get Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      renderMessage()
@@ -25109,7 +25104,9 @@
 	      this.refs.location.value = ''; // clear the value in the browser
 	      this.props.onSearch(location); //onSerch is the parent function
 	    }
-	  }, // we have a form but we have no way of handling it, so we create a onFormSubmit function
+	  },
+	  // we have a form but we have no way of handling it, so we create a onFormSubmit function
+	  // so everytime the form is submitted, onFormSubmit fnction gets called
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -25117,13 +25114,12 @@
 	      React.createElement(
 	        'form',
 	        { onSubmit: this.onFormSubmit },
-	        ' // so everytime the form is submitted, onFormSubmit fnction gets called',
 	        React.createElement(
 	          'input',
 	          { type: 'text', ref: 'location' },
 	          React.createElement(
 	            'button',
-	            null,
+	            { className: 'button expanded ' },
 	            'Get Weather'
 	          )
 	        )
@@ -25138,12 +25134,12 @@
 /* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	  displayName: "WeatherMessage",
 
 	  render: function render() {
 	    var _props = this.props,
@@ -25151,11 +25147,11 @@
 	        location = _props.location;
 
 	    return React.createElement(
-	      'h3',
-	      null,
-	      'It\'s ',
+	      "h3",
+	      { className: "text-center" },
+	      "It's ",
 	      temp,
-	      ' in ',
+	      " in ",
 	      location
 	    );
 	  }
@@ -28727,10 +28723,10 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      null,
+	      { className: "text-center" },
 	      React.createElement(
 	        "h1",
-	        { className: "text-center" },
+	        null,
 	        "About"
 	      ),
 	      React.createElement(
